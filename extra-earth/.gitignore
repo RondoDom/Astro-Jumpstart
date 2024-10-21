@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Astro build output
+/dist/
+.out/
+public/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE-specific files (VSCode, JetBrains)
+.vscode/
+.idea/
+*.sublime-workspace
+
+# TypeScript cache
+*.tsbuildinfo
+
+# MacOS-specific files
+.DS_Store
+
+# Lock files (optional, depends on your preference)
+package-lock.json
+yarn.lock
+
+# Coverage directory used by testing frameworks
+coverage/
+
+# Ignore ESLint cache files
+.eslintcache
+
+# Ignore build output for Astro
+astro.config.mjs
+
+# Ignore Astro types generated during development
+astro-types/
+
+# Temp files
+*.tmp
+*.swp
+
+# Ignore React cache (if using react-refresh)
+.cache/
