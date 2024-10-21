@@ -1,0 +1,28 @@
+// src/styles/global.scss
+
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Helvetica, sans-serif';
+
+// Global Styles
+body {
+  font-family: $font-stack;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Example class
+.button {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

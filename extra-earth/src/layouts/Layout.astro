@@ -10,28 +10,61 @@
  * - title: A string that sets the document title for each page that uses this layout.
  */
 
-// Define the interface for the props that this layout will accept interface
+
+ // Define the interface for the props that this layout will accept interface
 interface Props {
 	title: string;
 }
 
+// Destructure the props passed from the pages that use this layout
 const { title } = Astro.props;
 ---
 
 <!doctype html>
+
+<!-- Import the Global SCSS file -->
+import 'extra-earth\src\styles\global.scss';
+
 <html lang="en">
 	<head>
+		<!-- Standard HTML Metadata -->
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
+		
+		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<!-- Astro-specific metadata generator -->
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Page Title, set dynamiclly based on props -->
 		<title>{title}</title>
 	</head>
+	
 	<body>
-		<slot />
+		<!-- Header section containing a persistent top menu -->
+		 <header>
+			<nav style="display: flex; align-items: left; padding: 10px; background-color:chocolate">
+				<!-- My Logo (image found in /public/images/logo.png) -->
+				<img src="/images/logo.png" alt="Logo" style="height: 40px; margin-right: 20px;" />
+				
+				<!-- Navigation Links -->
+				<a href="/" style="color: white; margin-right: 20px;">Home</a>
+				<a href="/about" style="color: white; margin-right: 20px;">About</a>
+				<a href="/contact" style="color: white;">Contact</a>
+			</nav>
+		 </header>
+
+		<!-- Main content slot where each page's content will be injected -->
+		<main>
+			<!-- 'slot' is an Astro feature that allows content from individual pages to be inserted here -->
+			<slot />
+		</main>
 	</body>
 </html>
+
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
